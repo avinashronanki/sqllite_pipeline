@@ -21,6 +21,22 @@ c = conn.cursor()
 # 		)""")
 # conn.commit()		
 
-c.execute(""" insert into addresses values ('john123','john123','john134','john','john','1234')
-		""")
-conn.commit()			
+# c.execute(""" insert into addresses values ('john123','john123','john134','john','john','1234')
+# 		""")
+# c.execute(
+# 	"""INSERT INTO addresses (first_name) VALUES ("Geek6")""")
+# conn.commit()	
+
+
+# to select all column we will use
+statement = '''SELECT * FROM addresses'''
+
+c.execute(statement)
+
+print("All the data")
+output = c.fetchall()
+for row in output:
+    print(row)
+
+conn.commit()
+
